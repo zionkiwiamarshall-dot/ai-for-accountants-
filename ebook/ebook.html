@@ -22,7 +22,7 @@ tr:nth-child(even) td { background: #F8FAFC; }
 .cover .glow { position: absolute; right: -60mm; top: -60mm; width: 190mm; height: 190mm; border-radius: 50%; background: radial-gradient(circle at 40% 60%, var(--primary), transparent 62%); opacity: .75; }
 .cover .glow2 { position: absolute; left: -50mm; bottom: -70mm; width: 150mm; height: 150mm; border-radius: 50%; background: radial-gradient(circle, rgba(255,176,32,.45), transparent 65%); }
 .cover .bar { position: absolute; left: 0; right: 0; top: 0; height: 5mm; background: linear-gradient(90deg, var(--primary), var(--blue) 55%, var(--gold)); }
-.cover .inner { position: absolute; left: 22mm; right: 22mm; top: 70mm; }
+.cover .inner { position: absolute; left: 22mm; right: 22mm; top: 40mm; }
 .cover .tag { display: inline-block; background: var(--gold); color: var(--ink); font-weight: 800; font-size: 9pt; letter-spacing: .14em; text-transform: uppercase; padding: 4pt 9pt; border-radius: 20pt; }
 .cover h1 { color: #fff; font-size: 52pt; line-height: 1; margin: 16pt 0 14pt; }
 .cover .sub { font-size: 15pt; line-height: 1.45; color: #CBD5E1; max-width: 140mm; }
@@ -48,8 +48,8 @@ tr:nth-child(even) td { background: #F8FAFC; }
 .chapter-open { break-before: page; padding-top: 30mm; }
 .chapter-open .num { font-family: "Archivo Black", sans-serif; font-size: 72pt; line-height: 1; color: var(--primary); }
 .chapter-open .kicker { font-size: 9pt; font-weight: 800; letter-spacing: .16em; text-transform: uppercase; color: var(--muted); margin-top: 8pt; }
-.chapter-open h1 { font-size: 30pt; line-height: 1.08; margin: 6pt 0 12pt; }
-.chapter-open .summary { font-size: 13pt; line-height: 1.5; color: var(--ink2); max-width: 150mm; }
+.chapter-open h1 { font-size: 30pt; line-height: 1.08; margin: 6pt 0 12pt; max-width: 105mm; }
+.chapter-open .summary { font-size: 13pt; line-height: 1.5; color: var(--ink2); max-width: 105mm; }
 .learn { margin: 18pt 0 0; border-left: 3pt solid var(--gold); padding: 6pt 0 6pt 12pt; }
 .learn b { display: block; font-size: 9pt; letter-spacing: .14em; text-transform: uppercase; color: var(--ink); margin-bottom: 4pt; }
 .lesson { margin-top: 22pt; }
@@ -72,6 +72,24 @@ tr:nth-child(even) td { background: #F8FAFC; }
 .apply h3 { margin: 3pt 0 5pt; font-size: 14pt; }
 .apply .online { margin-top: 8pt; font-size: 9.4pt; color: var(--muted); }
 
+.cover-art { position: absolute; right: 18mm; top: 150mm; width: 120mm; background: #fff; border-radius: 6mm; padding: 5mm; transform: rotate(2deg); box-shadow: 0 10mm 30mm rgba(0,0,0,.35); }
+.chapter-open { position: relative; }
+.chapter-art { position: absolute; right: 0; top: 24mm; width: 62mm; background: #F1F5F9; border-radius: 6mm; padding: 3mm; }
+.figure { margin: 8pt 0 14pt; border: 1px solid var(--line); border-radius: 8pt; padding: 8pt; break-inside: avoid; }
+.figure figcaption { font-size: 8.8pt; color: var(--muted); text-align: center; margin-top: 4pt; }
+.art { width: 100%; height: auto; display: block; }
+.cmp { margin: 12pt 0 14pt; border: 1px solid var(--line); border-radius: 8pt; overflow: hidden; break-inside: avoid; }
+.cmp .ch { background: #F1F5F9; padding: 6pt 11pt; font-weight: 800; color: var(--ink); font-size: 10.5pt; }
+.cmp .ch span { display: block; font-size: 7.8pt; letter-spacing: .14em; text-transform: uppercase; color: var(--blue); }
+.cmp .row { display: grid; grid-template-columns: 1fr 1fr; border-top: 1px solid var(--line); }
+.cmp .row > div { padding: 7pt 11pt; font-size: 9pt; }
+.cmp .row > div + div { border-left: 1px solid var(--line); background: #FAFBFC; }
+.cmp pre { white-space: pre-wrap; margin: 0; font-family: "Anonymous Pro", monospace; font-size: 8.8pt; line-height: 1.45; }
+.cmp .tag { display: inline-block; font-size: 7.5pt; font-weight: 800; letter-spacing: .1em; text-transform: uppercase; padding: 1.5pt 6pt; border-radius: 8pt; margin-bottom: 4pt; color: #fff; }
+.cmp .tag.w { background: #E5484D; } .cmp .tag.s { background: #12B886; } .cmp .tag.a { background: var(--ink); color: var(--gold); }
+.cmp .verdict { grid-column: 1 / -1; font-size: 9pt; font-weight: 700; padding: 5pt 11pt !important; border-left: 0 !important; }
+.cmp .verdict.w { background: #FFF1F1 !important; color: #9B1C1C; } .cmp .verdict.s { background: #E6FCF5 !important; color: #08704F; }
+.online-acts { margin-top: 6pt; font-size: 9.2pt; color: var(--ink2); }
 .appendix { break-before: page; }
 .appendix h1 { font-size: 28pt; margin: 0 0 6pt; }
 .appendix .group { font-family: "Archivo Black", sans-serif; color: var(--primary); font-size: 12pt; margin: 18pt 0 4pt; break-after: avoid; }
@@ -85,6 +103,22 @@ tr:nth-child(even) td { background: #F8FAFC; }
     <h1>AI for Accountants</h1>
     <div class="sub">A practical guide to using AI tools in bookkeeping, reporting, audit preparation and finance communication</div>
   </div>
+  <div class="cover-art"><svg class="art" viewBox="0 0 420 320" role="img" aria-label="A spreadsheet chart with an AI draft badge and a verified variance card" xmlns="http://www.w3.org/2000/svg">
+      <circle cx="300" cy="90" r="70" fill="var(--primary)" opacity=".18"/><circle cx="110" cy="250" r="54" fill="var(--gold)" opacity=".18"/>
+      <rect x="44" y="66" width="250" height="190" rx="16" fill="var(--ink)" opacity=".08"/><rect x="40" y="60" width="250" height="190" rx="16" fill="#fff" stroke="var(--ink)" stroke-opacity=".12"/>
+      <rect x="40" y="60" width="250" height="34" rx="16" fill="var(--ink)"/><rect x="40" y="78" width="250" height="16" fill="var(--ink)"/>
+      <circle cx="60" cy="77" r="4" fill="var(--gold)"/><circle cx="74" cy="77" r="4" fill="#fff" opacity=".5"/><circle cx="88" cy="77" r="4" fill="#fff" opacity=".5"/>
+      <line x1="56" x2="274" y1="116" y2="116" stroke="var(--ink)" stroke-opacity=".08"/><line x1="56" x2="274" y1="140" y2="140" stroke="var(--ink)" stroke-opacity=".08"/><line x1="56" x2="274" y1="164" y2="164" stroke="var(--ink)" stroke-opacity=".08"/><line x1="56" x2="274" y1="188" y2="188" stroke="var(--ink)" stroke-opacity=".08"/><line x1="56" x2="274" y1="212" y2="212" stroke="var(--ink)" stroke-opacity=".08"/>
+      <rect x="64" y="180" width="18" height="52" rx="5" fill="var(--primary)" opacity="0.35"/><rect x="94" y="156" width="18" height="76" rx="5" fill="var(--primary)" opacity="0.43999999999999995"/><rect x="124" y="168" width="18" height="64" rx="5" fill="var(--primary)" opacity="0.53"/><rect x="154" y="134" width="18" height="98" rx="5" fill="var(--primary)" opacity="0.62"/><rect x="184" y="112" width="18" height="120" rx="5" fill="var(--primary)" opacity="0.71"/><rect x="214" y="128" width="18" height="104" rx="5" fill="var(--primary)" opacity="0.7999999999999999"/><rect x="244" y="90" width="18" height="142" rx="5" fill="var(--gold)" opacity="1"/>
+      <path d="M70 188 L100 168 L130 176 L160 146 L190 134 L220 140 L250 104" stroke="var(--ink)" stroke-width="3" fill="none" stroke-linecap="round" stroke-linejoin="round"/>
+      <circle cx="250" cy="104" r="6" fill="var(--gold)" stroke="var(--ink)" stroke-width="3"/>
+      <rect x="262" y="156" width="132" height="110" rx="14" fill="var(--ink)" opacity=".08"/><rect x="258" y="150" width="132" height="110" rx="14" fill="#fff" stroke="var(--ink)" stroke-opacity=".12"/>
+      <text x="274" y="178" font-family="DM Sans, sans-serif" font-size="11" font-weight="700" fill="var(--ink)" opacity=".55">VARIANCE</text>
+      <text x="274" y="204" font-family="Archivo Black, sans-serif" font-size="22" fill="var(--ink)">+12.4%</text>
+      <rect x="274" y="218" width="96" height="5" rx="2.5" fill="var(--ink)" opacity="0.14"/><rect x="274" y="230" width="70" height="5" rx="2.5" fill="var(--ink)" opacity="0.14"/>
+      <circle cx="372" cy="172" r="9" fill="var(--primary)"/><path d="M368 172l3 3 5-6" stroke="#fff" stroke-width="2.4" fill="none" stroke-linecap="round" stroke-linejoin="round"/>
+      <g transform="translate(330 40)"><rect x="-34" y="-20" width="92" height="40" rx="20" fill="var(--ink)"/><path d="M-12 -9C-10.65 -1.3499999999999999 -10.65 -1.3499999999999999 -3 0C-10.65 1.3499999999999999 -10.65 1.3499999999999999 -12 9C-13.35 1.3499999999999999 -13.35 1.3499999999999999 -21 0C-13.35 -1.3499999999999999 -13.35 -1.3499999999999999 -12 -9Z" fill="var(--gold)"/><text x="4" y="5" font-family="DM Sans, sans-serif" font-weight="800" font-size="13" fill="#fff">AI draft</text></g>
+      <path d="M28 30C29.5 38.5 29.5 38.5 38 40C29.5 41.5 29.5 41.5 28 50C26.5 41.5 26.5 41.5 18 40C26.5 38.5 26.5 38.5 28 30Z" fill="var(--gold)"/><path d="M392 282C393.2 288.8 393.2 288.8 400 290C393.2 291.2 393.2 291.2 392 298C390.8 291.2 390.8 291.2 384 290C390.8 288.8 390.8 288.8 392 282Z" fill="var(--primary)"/><circle cx="330" cy="270" r="1.6" fill="var(--ink)" opacity=".18"/><circle cx="338" cy="270" r="1.6" fill="var(--ink)" opacity=".18"/><circle cx="346" cy="270" r="1.6" fill="var(--ink)" opacity=".18"/><circle cx="354" cy="270" r="1.6" fill="var(--ink)" opacity=".18"/><circle cx="330" cy="278" r="1.6" fill="var(--ink)" opacity=".18"/><circle cx="338" cy="278" r="1.6" fill="var(--ink)" opacity=".18"/><circle cx="346" cy="278" r="1.6" fill="var(--ink)" opacity=".18"/><circle cx="354" cy="278" r="1.6" fill="var(--ink)" opacity=".18"/><circle cx="330" cy="286" r="1.6" fill="var(--ink)" opacity=".18"/><circle cx="338" cy="286" r="1.6" fill="var(--ink)" opacity=".18"/><circle cx="346" cy="286" r="1.6" fill="var(--ink)" opacity=".18"/><circle cx="354" cy="286" r="1.6" fill="var(--ink)" opacity=".18"/><circle cx="330" cy="294" r="1.6" fill="var(--ink)" opacity=".18"/><circle cx="338" cy="294" r="1.6" fill="var(--ink)" opacity=".18"/><circle cx="346" cy="294" r="1.6" fill="var(--ink)" opacity=".18"/><circle cx="354" cy="294" r="1.6" fill="var(--ink)" opacity=".18"/></svg></div>
   <div class="foot"><div><b>8 modules</b>Lessons, worked examples and ready-to-use prompts</div><div>Edition 1 · 2026</div></div>
 </section>
 <section class="front">
@@ -108,6 +142,10 @@ tr:nth-child(even) td { background: #F8FAFC; }
   </ul>
 </section>
 <section class="chapter-open">
+  <div class="chapter-art"><svg class="art" viewBox="0 0 240 180" role="img" aria-label="An AI spark beside a document being verified" xmlns="http://www.w3.org/2000/svg"><path d="M42 30C78 4 150 -4 196 24C236 48 246 104 222 140C196 178 128 186 78 170C30 154 2 120 8 84C12 60 22 44 42 30Z" fill="var(--primary)" opacity="0.14"/>
+      <rect x="58" y="46" width="104" height="120" rx="12" fill="var(--ink)" opacity=".08"/><rect x="54" y="40" width="104" height="120" rx="12" fill="#fff" stroke="var(--ink)" stroke-opacity=".12"/><rect x="68" y="58" width="60" height="7" rx="3.5" fill="var(--ink)" opacity="0.5"/><rect x="68" y="76" width="76" height="5" rx="2.5" fill="var(--ink)" opacity="0.14"/><rect x="68" y="88" width="70" height="5" rx="2.5" fill="var(--ink)" opacity="0.14"/><rect x="68" y="100" width="64" height="5" rx="2.5" fill="var(--ink)" opacity="0.14"/><rect x="68" y="112" width="74" height="5" rx="2.5" fill="var(--ink)" opacity="0.14"/><rect x="68" y="124" width="50" height="5" rx="2.5" fill="var(--ink)" opacity="0.14"/>
+      <circle cx="166" cy="62" r="30" fill="var(--ink)"/><path d="M166 46C168.4 59.6 168.4 59.6 182 62C168.4 64.4 168.4 64.4 166 78C163.6 64.4 163.6 64.4 150 62C163.6 59.6 163.6 59.6 166 46Z" fill="var(--gold)"/><path d="M188 32C188.9 37.1 188.9 37.1 194 38C188.9 38.9 188.9 38.9 188 44C187.1 38.9 187.1 38.9 182 38C187.1 37.1 187.1 37.1 188 32Z" fill="var(--primary)"/>
+      <circle cx="150" cy="140" r="9" fill="var(--primary)"/><path d="M146 140l3 3 5-6" stroke="#fff" stroke-width="2.4" fill="none" stroke-linecap="round" stroke-linejoin="round"/><text x="164" y="144" font-family="DM Sans, sans-serif" font-size="11" font-weight="800" fill="var(--ink)">verified</text></svg></div>
   <div class="num">01</div>
   <div class="kicker">Module 1 of 8 · about 35 minutes</div>
   <h1>AI foundations for finance work</h1>
@@ -144,7 +182,21 @@ tr:nth-child(even) td { background: #F8FAFC; }
 </table>
 <div class="callout example"><span class="label">Illustrative example</span><p>A finance officer at a mid-sized NGO spends two days each quarter writing narrative for the donor's budget-versus-actual report. She now pastes the variance table (no staff names) into an AI tool with a clear prompt, gets a first draft in two minutes, then spends one hour correcting and adding context only she knows. Two days becomes half a day.</p></div>
 <h3>The real time savings</h3>
-<p>Most accountants do not save time on the calculations themselves. They save it on the work <em>around</em> the numbers: writing explanations, building checklists, finding the right formula, reading long documents and replying to questions. That is where to start.</p></section><section class="lesson"><h2><small>Lesson 1.3</small>The golden rule: AI drafts, you verify</h2>
+<p>Most accountants do not save time on the calculations themselves. They save it on the work <em>around</em> the numbers: writing explanations, building checklists, finding the right formula, reading long documents and replying to questions. That is where to start.</p></section><section class="lesson"><h2><small>Lesson 1.3</small>The golden rule: AI drafts, you verify</h2><figure class="figure"><svg class="art" viewBox="0 0 640 170" role="img" aria-label="Brief, AI drafts, you verify, you publish" xmlns="http://www.w3.org/2000/svg">
+      
+        <g transform="translate(20 30)"><rect width="132" height="104" rx="16" fill="var(--ink)"/><text x="16" y="34" font-family="Archivo Black, sans-serif" font-size="13" fill="#fff" opacity=".7">01</text>
+        <text x="16" y="62" font-family="Archivo Black, sans-serif" font-size="15" fill="#fff">You brief</text><text x="16" y="84" text-anchor="start" font-family="DM Sans, sans-serif" font-size="11" font-weight="500" fill="#fff"><tspan x="16" dy="0">Context, task,</tspan><tspan x="16" dy="14.3">checks</tspan></text></g>
+        <path d="M156 82 h18 m-6 -6 l6 6 -6 6" stroke="var(--ink)" stroke-width="2.5" fill="none" stroke-linecap="round" stroke-linejoin="round"/>
+        <g transform="translate(178 30)"><rect width="132" height="104" rx="16" fill="var(--primary)"/><text x="16" y="34" font-family="Archivo Black, sans-serif" font-size="13" fill="#fff" opacity=".7">02</text>
+        <text x="16" y="62" font-family="Archivo Black, sans-serif" font-size="15" fill="#fff">AI drafts</text><text x="16" y="84" text-anchor="start" font-family="DM Sans, sans-serif" font-size="11" font-weight="500" fill="#fff"><tspan x="16" dy="0">Fast first version</tspan></text></g>
+        <path d="M314 82 h18 m-6 -6 l6 6 -6 6" stroke="var(--ink)" stroke-width="2.5" fill="none" stroke-linecap="round" stroke-linejoin="round"/>
+        <g transform="translate(336 30)"><rect width="132" height="104" rx="16" fill="var(--gold)"/><text x="16" y="34" font-family="Archivo Black, sans-serif" font-size="13" fill="var(--ink)" opacity=".7">03</text>
+        <text x="16" y="62" font-family="Archivo Black, sans-serif" font-size="15" fill="var(--ink)">You verify</text><text x="16" y="84" text-anchor="start" font-family="DM Sans, sans-serif" font-size="11" font-weight="500" fill="var(--ink)"><tspan x="16" dy="0">Numbers, facts,</tspan><tspan x="16" dy="14.3">logic, fit</tspan></text></g>
+        <path d="M472 82 h18 m-6 -6 l6 6 -6 6" stroke="var(--ink)" stroke-width="2.5" fill="none" stroke-linecap="round" stroke-linejoin="round"/>
+        <g transform="translate(494 30)"><rect width="132" height="104" rx="16" fill="var(--blue)"/><text x="16" y="34" font-family="Archivo Black, sans-serif" font-size="13" fill="#fff" opacity=".7">04</text>
+        <text x="16" y="62" font-family="Archivo Black, sans-serif" font-size="15" fill="#fff">You publish</text><text x="16" y="84" text-anchor="start" font-family="DM Sans, sans-serif" font-size="11" font-weight="500" fill="#fff"><tspan x="16" dy="0">Your name, your</tspan><tspan x="16" dy="14.3">call</tspan></text></g>
+        
+      <path d="M402 140 C402 162 110 162 110 140" stroke="var(--ink)" stroke-opacity=".35" stroke-width="2" fill="none" stroke-dasharray="5 5"/><text x="256" y="166" text-anchor="middle" font-family="DM Sans, sans-serif" font-size="11" fill="var(--ink)" opacity=".6">Not right? Refine the brief and go again</text></svg><figcaption>Every AI output in finance goes through this loop before it is used.</figcaption></figure>
 <p>Professional responsibility does not move to the software. If an AI-drafted note goes into a report with your name on it, the note is yours. So every AI output in finance goes through a quick verification step before it is used.</p>
 <h3>The 4-check routine</h3>
 <ol>
@@ -164,16 +216,35 @@ tr:nth-child(even) td { background: #F8FAFC; }
   <h3>Map your own week</h3>
   <p>Find the three tasks in your real work where AI would save you the most time, safely.</p>
   <ol><li>List 10 tasks you did in the last two weeks. Include small ones like replying to queries or fixing formulas.</li><li>Paste the list (no client names or figures) into an AI tool with the starter prompt below.</li><li>Challenge the result. Move anything that would make the AI the only source of truth to the risky column.</li><li>Pick the top three tasks to try during this course and write them in your notes.</li></ol>
-  <div class="online">The starter prompt, completion checklist and module quiz for this task are on the learning site (https://zionkiwiamarshall-dot.github.io/ai-for-accountants-/).</div>
+  <div class="online">On the learning site (https://zionkiwiamarshall-dot.github.io/ai-for-accountants-/): the starter prompt and checklist for this task, 3 interactive activities, flashcards and the module quiz.</div>
 </div>
 <section class="chapter-open">
+  <div class="chapter-art"><svg class="art" viewBox="0 0 240 180" role="img" aria-label="A shield with a padlock and a traffic light" xmlns="http://www.w3.org/2000/svg"><path d="M42 30C78 4 150 -4 196 24C236 48 246 104 222 140C196 178 128 186 78 170C30 154 2 120 8 84C12 60 22 44 42 30Z" fill="var(--blue)" opacity="0.12"/>
+      <path d="M120 28 L168 46 V92 C168 124 146 146 120 156 C94 146 72 124 72 92 V46Z" fill="var(--ink)"/>
+      <path d="M120 40 L158 54 V92 C158 118 141 136 120 144Z" fill="#fff" opacity=".08"/>
+      <rect x="100" y="86" width="40" height="32" rx="6" fill="var(--gold)"/><path d="M108 86 v-8 a12 12 0 0 1 24 0 v8" stroke="var(--gold)" stroke-width="5" fill="none"/><circle cx="120" cy="100" r="4" fill="var(--ink)"/>
+      <g><circle cx="196" cy="56" r="9" fill="#12B886"/><circle cx="196" cy="80" r="9" fill="var(--gold)"/><circle cx="196" cy="104" r="9" fill="#E5484D"/><rect x="184" y="44" width="24" height="84" rx="12" fill="none" stroke="var(--ink)" stroke-opacity=".2" stroke-width="2"/></g>
+      <path d="M48 45C49.05 50.95 49.05 50.95 55 52C49.05 53.05 49.05 53.05 48 59C46.95 53.05 46.95 53.05 41 52C46.95 50.95 46.95 50.95 48 45Z" fill="var(--primary)"/></svg></div>
   <div class="num">02</div>
   <div class="kicker">Module 2 of 8 · about 35 minutes</div>
   <h1>Confidentiality, data protection and professional ethics</h1>
   <div class="summary">What you must never paste into an AI tool, how to anonymise data in two minutes, and how to use AI in line with your professional code.</div>
   <div class="learn"><b>In this chapter you will learn to</b><ul><li>Classify data as safe, anonymise or never</li><li>Anonymise a dataset before using AI</li><li>Document AI use for review</li></ul></div>
 </section>
-<section class="lesson"><h2><small>Lesson 2.1</small>Green, amber, red: what you can share</h2>
+<section class="lesson"><h2><small>Lesson 2.1</small>Green, amber, red: what you can share</h2><figure class="figure"><svg class="art" viewBox="0 0 640 150" role="img" aria-label="Green, amber and red data categories" xmlns="http://www.w3.org/2000/svg">
+      
+        <g transform="translate(16 20)"><rect width="192" height="112" rx="16" fill="#fff" stroke="var(--ink)" stroke-opacity=".12"/><rect width="10" height="112" rx="5" fill="#12B886"/>
+        <circle cx="38" cy="34" r="13" fill="#12B886"/><text x="60" y="39" font-family="DM Sans, sans-serif" font-weight="800" font-size="11" letter-spacing="1.5" fill="var(--ink)" opacity=".55">GREEN</text>
+        <text x="24" y="72" font-family="Archivo Black, sans-serif" font-size="15" fill="var(--ink)">Safe</text>
+        <text x="24" y="92" text-anchor="start" font-family="DM Sans, sans-serif" font-size="11" font-weight="500" fill="#334155"><tspan x="24" dy="0">Public info, made-up data,</tspan><tspan x="24" dy="14.3">generic questions</tspan></text></g>
+        <g transform="translate(224 20)"><rect width="192" height="112" rx="16" fill="#fff" stroke="var(--ink)" stroke-opacity=".12"/><rect width="10" height="112" rx="5" fill="#FFB020"/>
+        <circle cx="38" cy="34" r="13" fill="#FFB020"/><text x="60" y="39" font-family="DM Sans, sans-serif" font-weight="800" font-size="11" letter-spacing="1.5" fill="var(--ink)" opacity=".55">AMBER</text>
+        <text x="24" y="72" font-family="Archivo Black, sans-serif" font-size="15" fill="var(--ink)">Anonymise first</text>
+        <text x="24" y="92" text-anchor="start" font-family="DM Sans, sans-serif" font-size="11" font-weight="500" fill="#334155"><tspan x="24" dy="0">Real records with names and</tspan><tspan x="24" dy="14.3">IDs removed</tspan></text></g>
+        <g transform="translate(432 20)"><rect width="192" height="112" rx="16" fill="#fff" stroke="var(--ink)" stroke-opacity=".12"/><rect width="10" height="112" rx="5" fill="#E5484D"/>
+        <circle cx="38" cy="34" r="13" fill="#E5484D"/><text x="60" y="39" font-family="DM Sans, sans-serif" font-weight="800" font-size="11" letter-spacing="1.5" fill="var(--ink)" opacity=".55">RED</text>
+        <text x="24" y="72" font-family="Archivo Black, sans-serif" font-size="15" fill="var(--ink)">Never in public AI</text>
+        <text x="24" y="92" text-anchor="start" font-family="DM Sans, sans-serif" font-size="11" font-weight="500" fill="#334155"><tspan x="24" dy="0">Personal, financial or</tspan><tspan x="24" dy="14.3">confidential identifiers</tspan></text></g></svg><figcaption>Decide the category before you paste anything.</figcaption></figure>
 <p>Accountants handle some of the most sensitive data in any organisation: salaries, bank details, tax IDs, client finances. Before you use any AI tool, decide which category your data falls into.</p>
 <table>
 <tr><th>Category</th><th>Examples</th><th>Rule</th></tr>
@@ -219,16 +290,36 @@ I will run this on the real data myself, on my own computer.
   <h3>Anonymise a real working file</h3>
   <p>Take a real (amber) file you use often and make an AI-safe copy of it.</p>
   <ol><li>Choose a file you use often, such as a transaction export, aged debtors list or variance table.</li><li>Copy the values into a new workbook. Do not upload or paste the original.</li><li>Apply the routine: codes for names, delete identifiers, scale if needed. Keep the key separate.</li><li>Use the starter prompt with your anonymised copy to get a short summary, and confirm nothing identifying remains.</li></ol>
-  <div class="online">The starter prompt, completion checklist and module quiz for this task are on the learning site (https://zionkiwiamarshall-dot.github.io/ai-for-accountants-/).</div>
+  <div class="online">On the learning site (https://zionkiwiamarshall-dot.github.io/ai-for-accountants-/): the starter prompt and checklist for this task, 3 interactive activities, flashcards and the module quiz.</div>
 </div>
 <section class="chapter-open">
+  <div class="chapter-art"><svg class="art" viewBox="0 0 240 180" role="img" aria-label="A prompt bubble made of five building blocks and an AI reply" xmlns="http://www.w3.org/2000/svg"><path d="M42 30C78 4 150 -4 196 24C236 48 246 104 222 140C196 178 128 186 78 170C30 154 2 120 8 84C12 60 22 44 42 30Z" fill="var(--primary)" opacity="0.14"/>
+      <rect x="34" y="40" width="120" height="58" rx="14" fill="var(--ink)"/><path d="M58 98 l-8 16 22-16z" fill="var(--ink)"/>
+      <rect x="44" y="56" width="17" height="24" rx="5" fill="var(--primary)"/><text x="52.5" y="73" text-anchor="middle" font-family="Archivo Black, sans-serif" font-size="11" fill="var(--ink)">R</text><rect x="65" y="56" width="17" height="24" rx="5" fill="var(--blue)"/><text x="73.5" y="73" text-anchor="middle" font-family="Archivo Black, sans-serif" font-size="11" fill="var(--ink)">C</text><rect x="86" y="56" width="17" height="24" rx="5" fill="var(--gold)"/><text x="94.5" y="73" text-anchor="middle" font-family="Archivo Black, sans-serif" font-size="11" fill="var(--ink)">T</text><rect x="107" y="56" width="17" height="24" rx="5" fill="#fff"/><text x="115.5" y="73" text-anchor="middle" font-family="Archivo Black, sans-serif" font-size="11" fill="var(--ink)">F</text><rect x="128" y="56" width="17" height="24" rx="5" fill="#E5484D"/><text x="136.5" y="73" text-anchor="middle" font-family="Archivo Black, sans-serif" font-size="11" fill="var(--ink)">C</text>
+      <rect x="102" y="98" width="112" height="60" rx="14" fill="var(--ink)" opacity=".08"/><rect x="98" y="92" width="112" height="60" rx="14" fill="#fff" stroke="var(--ink)" stroke-opacity=".12"/><path d="M116 105C117.05 110.95 117.05 110.95 123 112C117.05 113.05 117.05 113.05 116 119C114.95 113.05 114.95 113.05 109 112C114.95 110.95 114.95 110.95 116 105Z" fill="var(--gold)"/><rect x="130" y="108" width="66" height="5" rx="2.5" fill="var(--ink)" opacity="0.14"/><rect x="114" y="124" width="82" height="5" rx="2.5" fill="var(--ink)" opacity="0.14"/><rect x="114" y="136" width="56" height="5" rx="2.5" fill="var(--ink)" opacity="0.14"/></svg></div>
   <div class="num">03</div>
   <div class="kicker">Module 3 of 8 · about 40 minutes</div>
   <h1>Prompting for finance-grade output</h1>
   <div class="summary">A simple 5-part prompt structure that turns generic AI answers into work you can actually use, plus how to iterate when the first answer misses.</div>
   <div class="learn"><b>In this chapter you will learn to</b><ul><li>Write prompts with the RCTFC structure</li><li>Iterate on weak answers</li><li>Build reusable prompt templates</li></ul></div>
 </section>
-<section class="lesson"><h2><small>Lesson 3.1</small>The RCTFC structure</h2>
+<section class="lesson"><h2><small>Lesson 3.1</small>The RCTFC structure</h2><figure class="figure"><svg class="art" viewBox="0 0 640 150" role="img" aria-label="The five parts of a prompt: Role, Context, Task, Format, Checks" xmlns="http://www.w3.org/2000/svg">
+      
+        <g transform="translate(16 20)"><rect width="112" height="112" rx="16" fill="var(--ink)"/><text x="14" y="44" font-family="Archivo Black, sans-serif" font-size="32" fill="#fff">R</text>
+        <text x="14" y="70" font-family="DM Sans, sans-serif" font-weight="800" font-size="13" fill="#fff">Role</text>
+        <text x="14" y="88" text-anchor="start" font-family="DM Sans, sans-serif" font-size="10.5" font-weight="500" fill="#fff"><tspan x="14" dy="0">Who should it act</tspan><tspan x="14" dy="13.65">as?</tspan></text></g>
+        <g transform="translate(140 20)"><rect width="112" height="112" rx="16" fill="var(--primary)"/><text x="14" y="44" font-family="Archivo Black, sans-serif" font-size="32" fill="#fff">C</text>
+        <text x="14" y="70" font-family="DM Sans, sans-serif" font-weight="800" font-size="13" fill="#fff">Context</text>
+        <text x="14" y="88" text-anchor="start" font-family="DM Sans, sans-serif" font-size="10.5" font-weight="500" fill="#fff"><tspan x="14" dy="0">What is the</tspan><tspan x="14" dy="13.65">situation?</tspan></text></g>
+        <g transform="translate(264 20)"><rect width="112" height="112" rx="16" fill="var(--blue)"/><text x="14" y="44" font-family="Archivo Black, sans-serif" font-size="32" fill="#fff">T</text>
+        <text x="14" y="70" font-family="DM Sans, sans-serif" font-weight="800" font-size="13" fill="#fff">Task</text>
+        <text x="14" y="88" text-anchor="start" font-family="DM Sans, sans-serif" font-size="10.5" font-weight="500" fill="#fff"><tspan x="14" dy="0">What exactly to</tspan><tspan x="14" dy="13.65">do?</tspan></text></g>
+        <g transform="translate(388 20)"><rect width="112" height="112" rx="16" fill="var(--gold)"/><text x="14" y="44" font-family="Archivo Black, sans-serif" font-size="32" fill="var(--ink)">F</text>
+        <text x="14" y="70" font-family="DM Sans, sans-serif" font-weight="800" font-size="13" fill="var(--ink)">Format</text>
+        <text x="14" y="88" text-anchor="start" font-family="DM Sans, sans-serif" font-size="10.5" font-weight="500" fill="var(--ink)"><tspan x="14" dy="0">What should it</tspan><tspan x="14" dy="13.65">look like?</tspan></text></g>
+        <g transform="translate(512 20)"><rect width="112" height="112" rx="16" fill="#E5484D"/><text x="14" y="44" font-family="Archivo Black, sans-serif" font-size="32" fill="#fff">C</text>
+        <text x="14" y="70" font-family="DM Sans, sans-serif" font-weight="800" font-size="13" fill="#fff">Checks</text>
+        <text x="14" y="88" text-anchor="start" font-family="DM Sans, sans-serif" font-size="10.5" font-weight="500" fill="#fff"><tspan x="14" dy="0">Limits and what</tspan><tspan x="14" dy="13.65">to do if unsure</tspan></text></g></svg><figcaption>Five parts of a finance-grade prompt.</figcaption></figure>
 <p>Most poor AI answers come from short, vague prompts. Use five parts. You do not need all five every time, but the more you include, the better the answer.</p>
 <table>
 <tr><th>Part</th><th>Question it answers</th><th>Example</th></tr>
@@ -246,7 +337,13 @@ Format: One paragraph per variance, plain English, under 80 words each, starting
 Checks: Use only the figures and notes I provide. Do not invent reasons. If the cause is unclear, write [CONFIRM WITH BUDGET HOLDER]. Do not recalculate totals.
 
 [paste table]</pre></div>
-<div class="callout tip"><span class="label">Tip</span><p>The <strong>Checks</strong> part is what makes prompts finance-grade. Telling the AI exactly what to do when it does not know stops most invented answers.</p></div></section><section class="lesson"><h2><small>Lesson 3.2</small>Iterate: the second prompt matters most</h2>
+<div class="callout tip"><span class="label">Tip</span><p>The <strong>Checks</strong> part is what makes prompts finance-grade. Telling the AI exactly what to do when it does not know stops most invented answers.</p></div><div class="cmp"><div class="ch"><span>See the difference</span>Variance commentary: same data, two prompts</div><div class="row"><div><span class="tag w">Weak prompt</span><pre>Explain these variances.
+
+[table pasted]</pre></div><div><span class="tag a">AI replies</span><div>Overall, the organisation performed well this quarter, with some lines over and some under budget. Staff costs were higher, likely due to increased activity and inflation. Travel was lower, possibly reflecting cost-saving efforts. Management should continue monitoring spending closely.</div></div><div class="verdict w">Generic, invents reasons ("inflation", "cost-saving efforts") and gives nothing a manager can act on.</div></div><div class="row"><div><span class="tag s">Strong prompt</span><pre>Role: Act as a senior management accountant.
+Context: Q3 budget vs actual below. Budget holder notes are in the last column.
+Task: Commentary on the 3 largest variances.
+Format: One paragraph each, under 60 words, line name in bold.
+Checks: Use only my figures and notes. If a reason is missing, write [CONFIRM WITH BUDGET HOLDER].</pre></div><div><span class="tag a">AI replies</span><div><b>Staff costs (+18%, 4.2m over).</b> Two field officers were hired in July, earlier than the budgeted October start, to support the new district project.<br><br><b>Travel (−35%, 1.1m under).</b> Two donor monitoring visits moved to Q4. [CONFIRM WITH BUDGET HOLDER: are both still planned?]<br><br><b>Rent (+9%).</b> [CONFIRM WITH BUDGET HOLDER]</div></div><div class="verdict s">Specific, uses only real reasons, and flags exactly what to follow up. Ready to edit, not rewrite.</div></div></div></section><section class="lesson"><h2><small>Lesson 3.2</small>Iterate: the second prompt matters most</h2>
 <p>Treat the first answer as a first draft. Experienced users rarely accept it as-is. Instead they give short, specific follow-ups.</p>
 <h3>Useful follow-ups</h3>
 <ul>
@@ -282,9 +379,14 @@ Do not rewrite the whole thing.
   <h3>Rebuild a weak prompt</h3>
   <p>Take a task from your top three (Module 1) and turn it into a tested, reusable RCTFC prompt.</p>
   <ol><li>Write the short, lazy version of the prompt you would normally type, and run it.</li><li>Rewrite it with all five RCTFC parts and run it again on the same anonymised input.</li><li>Use at least two follow-ups to improve the answer.</li><li>Save the final prompt as a template with [square brackets] for the parts you change.</li></ol>
-  <div class="online">The starter prompt, completion checklist and module quiz for this task are on the learning site (https://zionkiwiamarshall-dot.github.io/ai-for-accountants-/).</div>
+  <div class="online">On the learning site (https://zionkiwiamarshall-dot.github.io/ai-for-accountants-/): the starter prompt and checklist for this task, 3 interactive activities, flashcards and the module quiz.</div>
 </div>
 <section class="chapter-open">
+  <div class="chapter-art"><svg class="art" viewBox="0 0 240 180" role="img" aria-label="A spreadsheet with a formula and a highlighted cell" xmlns="http://www.w3.org/2000/svg"><path d="M42 30C78 4 150 -4 196 24C236 48 246 104 222 140C196 178 128 186 78 170C30 154 2 120 8 84C12 60 22 44 42 30Z" fill="var(--primary)" opacity="0.14"/>
+      <rect x="40" y="40" width="168" height="116" rx="10" fill="var(--ink)" opacity=".08"/><rect x="36" y="34" width="168" height="116" rx="10" fill="#fff" stroke="var(--ink)" stroke-opacity=".12"/><rect x="36" y="34" width="168" height="22" rx="10" fill="var(--ink)"/><rect x="36" y="46" width="168" height="10" fill="var(--ink)"/>
+      <text x="48" y="50" font-family="Anonymous Pro, monospace" font-size="11" fill="var(--gold)">fx =SUMIFS(D:D,B:B,A2)</text>
+      <rect x="48" y="66" width="44" height="12" rx="3" fill="var(--ink)" opacity="0.1"/><rect x="100" y="66" width="44" height="12" rx="3" fill="var(--ink)" opacity="0.1"/><rect x="152" y="66" width="44" height="12" rx="3" fill="var(--ink)" opacity="0.1"/><rect x="48" y="86" width="44" height="12" rx="3" fill="var(--ink)" opacity="0.1"/><rect x="100" y="86" width="44" height="12" rx="3" fill="var(--ink)" opacity="0.1"/><rect x="152" y="86" width="44" height="12" rx="3" fill="var(--gold)" opacity="1"/><rect x="48" y="106" width="44" height="12" rx="3" fill="var(--ink)" opacity="0.1"/><rect x="100" y="106" width="44" height="12" rx="3" fill="var(--ink)" opacity="0.1"/><rect x="152" y="106" width="44" height="12" rx="3" fill="var(--ink)" opacity="0.1"/><rect x="48" y="126" width="44" height="12" rx="3" fill="var(--ink)" opacity="0.1"/><rect x="100" y="126" width="44" height="12" rx="3" fill="var(--ink)" opacity="0.1"/><rect x="152" y="126" width="44" height="12" rx="3" fill="var(--ink)" opacity="0.1"/>
+      <rect x="148" y="82" width="52" height="20" rx="4" fill="none" stroke="var(--primary)" stroke-width="3"/><path d="M204 25C205.35 32.65 205.35 32.65 213 34C205.35 35.35 205.35 35.35 204 43C202.65 35.35 202.65 35.35 195 34C202.65 32.65 202.65 32.65 204 25Z" fill="var(--gold)"/></svg></div>
   <div class="num">04</div>
   <div class="kicker">Module 4 of 8 · about 45 minutes</div>
   <h1>Excel and spreadsheets with AI</h1>
@@ -304,7 +406,8 @@ Explain each part of the formula in one line.</pre></div>
   <li>Test an edge case: a month with no transactions, a negative amount, a code that does not exist.</li>
   <li>Check what happens when someone adds rows. Does the range still cover them?</li>
 </ol>
-<div class="callout warn"><span class="label">Watch out</span><p>A formula can be correct and still be wrong for your data, for example if dates are stored as text or codes have trailing spaces. If results look odd, ask the AI: "What data problems could make this formula return the wrong result?"</p></div></section><section class="lesson"><h2><small>Lesson 4.2</small>Understanding a spreadsheet you inherited</h2>
+<div class="callout warn"><span class="label">Watch out</span><p>A formula can be correct and still be wrong for your data, for example if dates are stored as text or codes have trailing spaces. If results look odd, ask the AI: "What data problems could make this formula return the wrong result?"</p></div><div class="cmp"><div class="ch"><span>See the difference</span>Asking for a formula</div><div class="row"><div><span class="tag w">Weak prompt</span><pre>Formula to add up sales by month</pre></div><div><span class="tag a">AI replies</span><div>You can use =SUM(B2:B100) to add up your sales. If you want by month, you could create a pivot table.</div></div><div class="verdict w">Doesn't know your columns, your Excel version or what 'by month' means in your layout.</div></div><div class="row"><div><span class="tag s">Strong prompt</span><pre>I use Excel 365. Sheet 'Transactions': A = Date, B = Account code, D = Amount. Sheet 'Summary': codes in A, months (first of month) in row 1 from B1.
+Write a formula for B2 that totals Amount for that code and month, which I can copy across and down. Explain each part.</pre></div><div><span class="tag a">AI replies</span><div>=SUMIFS(Transactions!$D:$D, Transactions!$B:$B, $A2, Transactions!$A:$A, "&gt;="&amp;B$1, Transactions!$A:$A, "&lt;"&amp;EDATE(B$1,1))<br><br>• $D:$D is the column to total<br>• $B:$B = $A2 matches the account code (column locked)<br>• the two date conditions keep only that month (row locked)</div></div><div class="verdict s">Works first time, copies correctly, and you understand it well enough to check it.</div></div></div></section><section class="lesson"><h2><small>Lesson 4.2</small>Understanding a spreadsheet you inherited</h2>
 <p>Every finance team has a workbook nobody fully understands. AI is very good at explaining formulas line by line.</p>
 <div class="prompt"><div class="ph">Explain a formula</div><pre>Explain this Excel formula step by step in plain English, as if to a new accountant.
 Then tell me: what could make it return a wrong answer, and how would you simplify it?
@@ -335,9 +438,16 @@ Give me step-by-step instructions using [Power Query / formulas] to produce a cl
   <h3>Fix one real spreadsheet problem</h3>
   <p>Use AI to solve a formula, cleaning or documentation problem you actually have.</p>
   <ol><li>Choose a real problem: a formula you need, a workbook you do not understand, or a messy export.</li><li>Describe it to the AI using fake sample data that has the same structure.</li><li>Apply the answer to your real file on your own computer.</li><li>Test it: check 3 cells by hand and try one edge case.</li></ol>
-  <div class="online">The starter prompt, completion checklist and module quiz for this task are on the learning site (https://zionkiwiamarshall-dot.github.io/ai-for-accountants-/).</div>
+  <div class="online">On the learning site (https://zionkiwiamarshall-dot.github.io/ai-for-accountants-/): the starter prompt and checklist for this task, 3 interactive activities, flashcards and the module quiz.</div>
 </div>
 <section class="chapter-open">
+  <div class="chapter-art"><svg class="art" viewBox="0 0 240 180" role="img" aria-label="Bank and ledger columns being matched with one item flagged" xmlns="http://www.w3.org/2000/svg"><path d="M42 30C78 4 150 -4 196 24C236 48 246 104 222 140C196 178 128 186 78 170C30 154 2 120 8 84C12 60 22 44 42 30Z" fill="var(--blue)" opacity="0.12"/>
+      <rect x="34" y="40" width="76" height="116" rx="10" fill="var(--ink)" opacity=".08"/><rect x="30" y="34" width="76" height="116" rx="10" fill="#fff" stroke="var(--ink)" stroke-opacity=".12"/><rect x="138" y="40" width="76" height="116" rx="10" fill="var(--ink)" opacity=".08"/><rect x="134" y="34" width="76" height="116" rx="10" fill="#fff" stroke="var(--ink)" stroke-opacity=".12"/>
+      <text x="42" y="54" font-family="DM Sans, sans-serif" font-size="10" font-weight="800" fill="var(--ink)" opacity=".55">BANK</text><text x="146" y="54" font-family="DM Sans, sans-serif" font-size="10" font-weight="800" fill="var(--ink)" opacity=".55">LEDGER</text>
+      <rect x="42" y="70" width="52" height="5" rx="2.5" fill="var(--ink)" opacity="0.14"/><rect x="146" y="70" width="52" height="5" rx="2.5" fill="var(--ink)" opacity="0.14"/><rect x="42" y="88" width="52" height="5" rx="2.5" fill="var(--ink)" opacity="0.14"/><rect x="146" y="88" width="52" height="5" rx="2.5" fill="var(--ink)" opacity="0.14"/><rect x="42" y="106" width="52" height="5" rx="2.5" fill="var(--ink)" opacity="0.14"/><rect x="146" y="106" width="52" height="5" rx="2.5" fill="var(--ink)" opacity="0.14"/><rect x="42" y="124" width="52" height="5" rx="2.5" fill="var(--ink)" opacity="0.14"/><rect x="146" y="124" width="52" height="5" rx="2.5" fill="var(--ink)" opacity="0.14"/>
+      <path d="M96 72 H144" stroke="var(--primary)" stroke-width="2.5" stroke-dasharray="4 4"/><path d="M96 90 H144" stroke="var(--primary)" stroke-width="2.5" stroke-dasharray="4 4"/><path d="M96 108 H144" stroke="var(--primary)" stroke-width="2.5" stroke-dasharray="4 4"/>
+      <circle cx="120" cy="126" r="14" fill="var(--gold)"/><text x="120" y="131" text-anchor="middle" font-family="Archivo Black, sans-serif" font-size="14" fill="var(--ink)">?</text>
+      <circle cx="206" cy="40" r="9" fill="var(--primary)"/><path d="M202 40l3 3 5-6" stroke="#fff" stroke-width="2.4" fill="none" stroke-linecap="round" stroke-linejoin="round"/></svg></div>
   <div class="num">05</div>
   <div class="kicker">Module 5 of 8 · about 40 minutes</div>
   <h1>Bookkeeping, reconciliations and month-end close</h1>
@@ -372,7 +482,21 @@ Ledger unmatched: [paste]</pre></div>
   <li>The same amount posted twice in the ledger</li>
   <li>Round-sum receipts split across several bank lines</li>
   <li>Recurring bank charges never posted</li>
-</ul></section><section class="lesson"><h2><small>Lesson 5.3</small>A tighter month-end close</h2>
+</ul></section><section class="lesson"><h2><small>Lesson 5.3</small>A tighter month-end close</h2><figure class="figure"><svg class="art" viewBox="0 0 640 140" role="img" aria-label="A month-end close timeline from Day -2 to Day +5" xmlns="http://www.w3.org/2000/svg">
+      <line x1="30" x2="610" y1="60" y2="60" stroke="var(--ink)" stroke-opacity=".2" stroke-width="4" stroke-linecap="round"/>
+      
+        <g transform="translate(44 60)"><circle r="12" fill="var(--primary)" stroke="var(--ink)" stroke-width="3"/><text y="-24" text-anchor="middle" font-family="Archivo Black, sans-serif" font-size="12" fill="var(--ink)">Day -2</text>
+        <text x="0" y="38" text-anchor="middle" font-family="DM Sans, sans-serif" font-size="11" font-weight="500" fill="#334155"><tspan x="0" dy="0">Cut-off</tspan><tspan x="0" dy="14.3">reminders</tspan></text></g>
+        <g transform="translate(154 60)"><circle r="12" fill="var(--primary)" stroke="var(--ink)" stroke-width="3"/><text y="-24" text-anchor="middle" font-family="Archivo Black, sans-serif" font-size="12" fill="var(--ink)">Day 0</text>
+        <text x="0" y="38" text-anchor="middle" font-family="DM Sans, sans-serif" font-size="11" font-weight="500" fill="#334155"><tspan x="0" dy="0">Bank & mobile</tspan><tspan x="0" dy="14.3">money recs</tspan></text></g>
+        <g transform="translate(264 60)"><circle r="12" fill="var(--primary)" stroke="var(--ink)" stroke-width="3"/><text y="-24" text-anchor="middle" font-family="Archivo Black, sans-serif" font-size="12" fill="var(--ink)">Day +1</text>
+        <text x="0" y="38" text-anchor="middle" font-family="DM Sans, sans-serif" font-size="11" font-weight="500" fill="#334155"><tspan x="0" dy="0">Accruals &</tspan><tspan x="0" dy="14.3">payroll</tspan></text></g>
+        <g transform="translate(374 60)"><circle r="12" fill="var(--primary)" stroke="var(--ink)" stroke-width="3"/><text y="-24" text-anchor="middle" font-family="Archivo Black, sans-serif" font-size="12" fill="var(--ink)">Day +2</text>
+        <text x="0" y="38" text-anchor="middle" font-family="DM Sans, sans-serif" font-size="11" font-weight="500" fill="#334155"><tspan x="0" dy="0">Fixed assets &</tspan><tspan x="0" dy="14.3">funds</tspan></text></g>
+        <g transform="translate(484 60)"><circle r="12" fill="var(--primary)" stroke="var(--ink)" stroke-width="3"/><text y="-24" text-anchor="middle" font-family="Archivo Black, sans-serif" font-size="12" fill="var(--ink)">Day +3</text>
+        <text x="0" y="38" text-anchor="middle" font-family="DM Sans, sans-serif" font-size="11" font-weight="500" fill="#334155"><tspan x="0" dy="0">Review &</tspan><tspan x="0" dy="14.3">variances</tspan></text></g>
+        <g transform="translate(594 60)"><circle r="12" fill="var(--gold)" stroke="var(--ink)" stroke-width="3"/><text y="-24" text-anchor="middle" font-family="Archivo Black, sans-serif" font-size="12" fill="var(--ink)">Day +5</text>
+        <text x="0" y="38" text-anchor="middle" font-family="DM Sans, sans-serif" font-size="11" font-weight="500" fill="#334155"><tspan x="0" dy="0">Pack issued</tspan></text></g></svg><figcaption>A typical close calendar. Yours will differ: let AI help you write it down.</figcaption></figure>
 <p>A clear, owned checklist is the single best tool for a faster close. AI can turn your team's scattered knowledge into one.</p>
 <div class="prompt"><div class="ph">Build a close checklist</div><pre>Help me build a month-end close checklist for [type of organisation, e.g. an NGO with 3 donors and 40 staff].
 Our systems: [e.g. QuickBooks, Excel payroll, two bank accounts and a mobile money account].
@@ -390,16 +514,31 @@ Invoices received: [paste]</pre></div>
   <h3>Draft your close checklist</h3>
   <p>Produce a month-end checklist for your organisation that you would actually use next month.</p>
   <ol><li>List your systems, bank and mobile money accounts, and the main problems from the last two closes.</li><li>Run the starter prompt and answer the AI's questions.</li><li>Edit the result: remove what does not apply, add what only you know.</li><li>Assign owners and share it with one colleague for comment.</li></ol>
-  <div class="online">The starter prompt, completion checklist and module quiz for this task are on the learning site (https://zionkiwiamarshall-dot.github.io/ai-for-accountants-/).</div>
+  <div class="online">On the learning site (https://zionkiwiamarshall-dot.github.io/ai-for-accountants-/): the starter prompt and checklist for this task, 3 interactive activities, flashcards and the module quiz.</div>
 </div>
 <section class="chapter-open">
+  <div class="chapter-art"><svg class="art" viewBox="0 0 240 180" role="img" aria-label="A management report with bar and pie charts" xmlns="http://www.w3.org/2000/svg"><path d="M42 30C78 4 150 -4 196 24C236 48 246 104 222 140C196 178 128 186 78 170C30 154 2 120 8 84C12 60 22 44 42 30Z" fill="var(--primary)" opacity="0.14"/>
+      <rect x="44" y="36" width="120" height="130" rx="12" fill="var(--ink)" opacity=".08"/><rect x="40" y="30" width="120" height="130" rx="12" fill="#fff" stroke="var(--ink)" stroke-opacity=".12"/><rect x="54" y="46" width="60" height="7" rx="3.5" fill="var(--ink)" opacity="0.5"/>
+      <rect x="58" y="88" width="14" height="30" rx="4" fill="var(--primary)" opacity="0.55"/><rect x="80" y="68" width="14" height="50" rx="4" fill="var(--primary)" opacity="0.55"/><rect x="102" y="80" width="14" height="38" rx="4" fill="var(--primary)" opacity="0.55"/><rect x="124" y="54" width="14" height="64" rx="4" fill="var(--gold)" opacity="1"/>
+      <rect x="54" y="128" width="92" height="5" rx="2.5" fill="var(--ink)" opacity="0.14"/><rect x="54" y="140" width="70" height="5" rx="2.5" fill="var(--ink)" opacity="0.14"/>
+      <circle cx="182" cy="68" r="30" fill="var(--ink)"/><path d="M182 68 V38 A30 30 0 0 1 210 78Z" fill="var(--gold)"/><path d="M182 68 L210 78 A30 30 0 0 1 172 96Z" fill="var(--primary)"/>
+      <path d="M200 132C201.2 138.8 201.2 138.8 208 140C201.2 141.2 201.2 141.2 200 148C198.8 141.2 198.8 141.2 192 140C198.8 138.8 198.8 138.8 200 132Z" fill="var(--blue)"/></svg></div>
   <div class="num">06</div>
   <div class="kicker">Module 6 of 8 · about 40 minutes</div>
   <h1>Analysis, reporting and management packs</h1>
   <div class="summary">Turn numbers into clear stories for managers, boards and donors: variance analysis, ratio explanations and report drafting.</div>
   <div class="learn"><b>In this chapter you will learn to</b><ul><li>Draft variance and trend commentary</li><li>Explain ratios to non-finance readers</li><li>Structure a management or donor report</li></ul></div>
 </section>
-<section class="lesson"><h2><small>Lesson 6.1</small>From numbers to insight</h2>
+<section class="lesson"><h2><small>Lesson 6.1</small>From numbers to insight</h2><figure class="figure"><svg class="art" viewBox="0 0 640 120" role="img" aria-label="What happened, why, so what, now what" xmlns="http://www.w3.org/2000/svg">
+      
+        <g transform="translate(16 16)"><path d="M0 0 H130 L148 44 L130 88 H0 L18 44Z" fill="var(--ink)"/>
+        <text x="26" y="40" font-family="Archivo Black, sans-serif" font-size="12.5" fill="#fff">What happened</text><text x="28" y="60" text-anchor="start" font-family="DM Sans, sans-serif" font-size="10.5" font-weight="500" fill="#fff"><tspan x="28" dy="0">Movement in</tspan><tspan x="28" dy="13.65">figures and %</tspan></text></g>
+        <g transform="translate(170 16)"><path d="M0 0 H130 L148 44 L130 88 H0 L18 44Z" fill="var(--blue)"/>
+        <text x="26" y="40" font-family="Archivo Black, sans-serif" font-size="12.5" fill="#fff">Why</text><text x="28" y="60" text-anchor="start" font-family="DM Sans, sans-serif" font-size="10.5" font-weight="500" fill="#fff"><tspan x="28" dy="0">The real cause</tspan></text></g>
+        <g transform="translate(324 16)"><path d="M0 0 H130 L148 44 L130 88 H0 L18 44Z" fill="var(--primary)"/>
+        <text x="26" y="40" font-family="Archivo Black, sans-serif" font-size="12.5" fill="#fff">So what</text><text x="28" y="60" text-anchor="start" font-family="DM Sans, sans-serif" font-size="10.5" font-weight="500" fill="#fff"><tspan x="28" dy="0">Impact on year,</tspan><tspan x="28" dy="13.65">cash, targets</tspan></text></g>
+        <g transform="translate(478 16)"><path d="M0 0 H130 L148 44 L130 88 H0 L18 44Z" fill="var(--gold)"/>
+        <text x="26" y="40" font-family="Archivo Black, sans-serif" font-size="12.5" fill="var(--ink)">Now what</text><text x="28" y="60" text-anchor="start" font-family="DM Sans, sans-serif" font-size="10.5" font-weight="500" fill="var(--ink)"><tspan x="28" dy="0">Action or</tspan><tspan x="28" dy="13.65">decision needed</tspan></text></g></svg><figcaption>The structure managers actually want from commentary.</figcaption></figure>
 <p>Managers rarely want more numbers. They want to know <strong>what changed, why, and what to do</strong>. AI is a strong first-draft writer for this, as long as you give it the numbers and the known reasons.</p>
 <h3>The "so what" structure</h3>
 <ol>
@@ -436,15 +575,20 @@ Main variances and reasons: [paste].
 Tone: factual, transparent, no excuses. Explain underspends with a realistic plan to use the funds, and overspends with how they are being managed.
 Mark anything that needs donor approval (such as budget realignment) with [REQUIRES DONOR APPROVAL].
 Max 400 words.</pre></div>
-<div class="callout example"><span class="label">Illustrative example</span><p>A good final step: paste your finished draft back in and ask, "Which sentences could a donor misread, or read as hiding a problem?" Fix those before you send it.</p></div></section>
+<div class="callout example"><span class="label">Illustrative example</span><p>A good final step: paste your finished draft back in and ask, "Which sentences could a donor misread, or read as hiding a problem?" Fix those before you send it.</p></div><div class="cmp"><div class="ch"><span>See the difference</span>Donor narrative on an underspend</div><div class="row"><div><span class="tag w">Weak prompt</span><pre>Write the financial section of our donor report. We underspent.</pre></div><div><span class="tag a">AI replies</span><div>During the reporting period, the project demonstrated prudent financial management, resulting in savings. These savings reflect our commitment to value for money and efficient use of donor resources.</div></div><div class="verdict w">Spins an underspend as 'savings', which donors often read as poor delivery or hiding a problem.</div></div><div class="row"><div><span class="tag s">Strong prompt</span><pre>Draft the financial narrative. Budget 120m, spent 78m (65%). Main reason: training rollout delayed 2 months by late materials approval. Plan: deliver remaining trainings in Q1.
+Tone: factual and transparent. Mark anything needing donor approval with [REQUIRES DONOR APPROVAL]. Max 150 words.</pre></div><div><span class="tag a">AI replies</span><div>Expenditure to date is 78m against a budget of 120m (65%). The main underspend is in training activities, delayed by two months while training materials awaited approval. The remaining trainings are scheduled for Q1, and we expect to reach 95% utilisation by the end of the grant. If the delay continues, we will propose moving part of the training budget to follow-up mentoring [REQUIRES DONOR APPROVAL].</div></div><div class="verdict s">Honest, specific, gives a credible plan and raises the approval issue early.</div></div></div></section>
 <div class="apply">
   <div class="k">Apply it at work</div>
   <h3>Write this month's commentary</h3>
   <p>Produce real commentary for a report you already prepare, in less than half the usual time.</p>
   <ol><li>Prepare an anonymised or scaled variance table, with percentages calculated in Excel and known reasons noted.</li><li>Use the starter prompt to get a first draft using the what, why, so what, now what structure.</li><li>Rewrite anything that is wrong, vague or missing context.</li><li>Ask the AI which sentences a reader could misread, and fix them.</li></ol>
-  <div class="online">The starter prompt, completion checklist and module quiz for this task are on the learning site (https://zionkiwiamarshall-dot.github.io/ai-for-accountants-/).</div>
+  <div class="online">On the learning site (https://zionkiwiamarshall-dot.github.io/ai-for-accountants-/): the starter prompt and checklist for this task, 3 interactive activities, flashcards and the module quiz.</div>
 </div>
 <section class="chapter-open">
+  <div class="chapter-art"><svg class="art" viewBox="0 0 240 180" role="img" aria-label="An audit checklist under a magnifying glass" xmlns="http://www.w3.org/2000/svg"><path d="M42 30C78 4 150 -4 196 24C236 48 246 104 222 140C196 178 128 186 78 170C30 154 2 120 8 84C12 60 22 44 42 30Z" fill="var(--gold)" opacity="0.16"/>
+      <rect x="42" y="36" width="110" height="130" rx="12" fill="var(--ink)" opacity=".08"/><rect x="38" y="30" width="110" height="130" rx="12" fill="#fff" stroke="var(--ink)" stroke-opacity=".12"/><circle cx="56" cy="52" r="9" fill="var(--primary)"/><path d="M52 52l3 3 5-6" stroke="#fff" stroke-width="2.4" fill="none" stroke-linecap="round" stroke-linejoin="round"/><rect x="72" y="50" width="60" height="5" rx="2.5" fill="var(--ink)" opacity="0.14"/><circle cx="56" cy="74" r="9" fill="var(--primary)"/><path d="M52 74l3 3 5-6" stroke="#fff" stroke-width="2.4" fill="none" stroke-linecap="round" stroke-linejoin="round"/><rect x="72" y="72" width="60" height="5" rx="2.5" fill="var(--ink)" opacity="0.14"/><circle cx="56" cy="96" r="9" fill="var(--primary)"/><path d="M52 96l3 3 5-6" stroke="#fff" stroke-width="2.4" fill="none" stroke-linecap="round" stroke-linejoin="round"/><rect x="72" y="94" width="60" height="5" rx="2.5" fill="var(--ink)" opacity="0.14"/><circle cx="56" cy="118" r="9" fill="var(--primary)"/><path d="M52 118l3 3 5-6" stroke="#fff" stroke-width="2.4" fill="none" stroke-linecap="round" stroke-linejoin="round"/><rect x="72" y="116" width="60" height="5" rx="2.5" fill="var(--ink)" opacity="0.14"/><circle cx="56" cy="140" r="9" fill="#CBD5E1"/><path d="M52 140l3 3 5-6" stroke="#fff" stroke-width="2.4" fill="none" stroke-linecap="round" stroke-linejoin="round"/><rect x="72" y="138" width="60" height="5" rx="2.5" fill="var(--ink)" opacity="0.14"/>
+      <circle cx="160" cy="92" r="32" fill="#fff" fill-opacity=".6" stroke="var(--ink)" stroke-width="7"/><path d="M184 116 L210 142" stroke="var(--ink)" stroke-width="10" stroke-linecap="round"/>
+      <path d="M160 82C161.5 90.5 161.5 90.5 170 92C161.5 93.5 161.5 93.5 160 102C158.5 93.5 158.5 93.5 150 92C158.5 90.5 158.5 90.5 160 82Z" fill="var(--gold)"/></svg></div>
   <div class="num">07</div>
   <div class="kicker">Module 7 of 8 · about 40 minutes</div>
   <h1>Tax, compliance and audit preparation</h1>
@@ -496,9 +640,14 @@ Plain English, max 2 pages. Ask me 5 questions first.</pre></div>
   <h3>Build your audit tracker</h3>
   <p>Create a PBC tracker for your next audit or donor review, and stress-test one area.</p>
   <ol><li>Run the PBC prompt for your organisation and adapt the list.</li><li>Pick one high-risk area (such as grants, payroll or fixed assets).</li><li>Ask the AI to act as the auditor and list questions for that area.</li><li>Note which questions you cannot yet answer with evidence.</li></ol>
-  <div class="online">The starter prompt, completion checklist and module quiz for this task are on the learning site (https://zionkiwiamarshall-dot.github.io/ai-for-accountants-/).</div>
+  <div class="online">On the learning site (https://zionkiwiamarshall-dot.github.io/ai-for-accountants-/): the starter prompt and checklist for this task, 3 interactive activities, flashcards and the module quiz.</div>
 </div>
 <section class="chapter-open">
+  <div class="chapter-art"><svg class="art" viewBox="0 0 240 180" role="img" aria-label="A team path from start to a flag" xmlns="http://www.w3.org/2000/svg"><path d="M42 30C78 4 150 -4 196 24C236 48 246 104 222 140C196 178 128 186 78 170C30 154 2 120 8 84C12 60 22 44 42 30Z" fill="var(--primary)" opacity="0.14"/>
+      <path d="M30 150 C70 150 70 110 110 110 S150 70 200 64" stroke="var(--ink)" stroke-width="4" fill="none" stroke-dasharray="2 9" stroke-linecap="round"/>
+      <circle cx="40" cy="150" r="10" fill="var(--primary)" stroke="var(--ink)" stroke-width="3"/><circle cx="110" cy="110" r="10" fill="var(--blue)" stroke="var(--ink)" stroke-width="3"/><circle cx="200" cy="64" r="10" fill="var(--gold)" stroke="var(--ink)" stroke-width="3"/>
+      <path d="M200 64 V24 l22 8 -22 8" fill="var(--gold)" stroke="var(--ink)" stroke-width="3" stroke-linejoin="round"/>
+      <g transform="translate(70 104) scale(0.9)"><circle cx="0" cy="-26" r="11" fill="#E8B48F"/><path d="M-11 -30c2-10 20-10 22 0c-4-4-18-4-22 0z" fill="var(--ink)"/><path d="M-20 14c0-18 8-28 20-28s20 10 20 28z" fill="var(--blue)"/></g><g transform="translate(150 150) scale(0.9)"><circle cx="0" cy="-26" r="11" fill="#E8B48F"/><path d="M-11 -30c2-10 20-10 22 0c-4-4-18-4-22 0z" fill="var(--ink)"/><path d="M-20 14c0-18 8-28 20-28s20 10 20 28z" fill="var(--primary)"/></g><path d="M30 32C31.2 38.8 31.2 38.8 38 40C31.2 41.2 31.2 41.2 30 48C28.8 41.2 28.8 41.2 22 40C28.8 38.8 28.8 38.8 30 32Z" fill="var(--gold)"/></svg></div>
   <div class="num">08</div>
   <div class="kicker">Module 8 of 8 · about 35 minutes</div>
   <h1>Communication and your AI routine</h1>
@@ -548,7 +697,7 @@ Plain English, practical, no jargon.</pre></div>
   <h3>Plan your next 30 days</h3>
   <p>Leave the course with a written routine for yourself and a roll-out plan for your team.</p>
   <ol><li>List the prompts from this course you will actually use, and save them in one place.</li><li>Write your weekly routine using the table in lesson 2 as a starting point.</li><li>Use the starter prompt to draft a 30-day roll-out plan for your team.</li><li>Choose two numbers you will track to measure time saved.</li></ol>
-  <div class="online">The starter prompt, completion checklist and module quiz for this task are on the learning site (https://zionkiwiamarshall-dot.github.io/ai-for-accountants-/).</div>
+  <div class="online">On the learning site (https://zionkiwiamarshall-dot.github.io/ai-for-accountants-/): the starter prompt and checklist for this task, 3 interactive activities, flashcards and the module quiz.</div>
 </div>
 <section class="appendix">
   <h1>Prompt library</h1>
